@@ -32,7 +32,7 @@ def test_get_pet_by_id(pet_page):
 
 def test_update_pet(pet_page):
 
-    with open('..\\data\\update_pet_data.json') as json_file:
+    with open('../data/update_pet_data.json') as json_file:
         update_pet_data = json.load(json_file)
 
     pet_page.update_pet(update_pet_data)
