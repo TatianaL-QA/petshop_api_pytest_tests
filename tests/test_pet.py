@@ -43,7 +43,7 @@ def test_update_pet(pet_page):
 
 def test_upload_image(pet_page):
     pet_id = 1
-    pet_img_path = "./data/doggo.png"
+    pet_img_path = "./doggo.png"
     pet_page.post_pet_image(pet_id=pet_id, pet_img_path=pet_img_path)
 
     assert pet_page.response_code == 200, f"Expected response code: 200, Actual response code: {pet_page.response_code}"
