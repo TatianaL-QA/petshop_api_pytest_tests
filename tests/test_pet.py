@@ -32,7 +32,7 @@ def test_get_pet_by_id(pet_page):
 
 def test_update_pet(pet_page):
 
-    with open('../data/update_pet_data.json') as json_file:
+    with open('./data/update_pet_data.json') as json_file:
         update_pet_data = json.load(json_file)
 
     pet_page.update_pet(update_pet_data)
@@ -43,7 +43,7 @@ def test_update_pet(pet_page):
 
 def test_upload_image(pet_page):
     pet_id = 1
-    pet_img_path = "../data/doggo.png"
+    pet_img_path = "./data/doggo.png"
     pet_page.post_pet_image(pet_id=pet_id, pet_img_path=pet_img_path)
 
     assert pet_page.response_code == 200, f"Expected response code: 200, Actual response code: {pet_page.response_code}"
