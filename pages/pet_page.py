@@ -15,6 +15,7 @@ class PetPage:
             response = self.api_client.post(endpoint, files=files)
             self.response_code = response.status_code
             self.response_json = response.json()
+            self.response_message = self.response_json.get('message')
 
     def get_pet_by_id(self, pet_id):
         endpoint = f"{API_BASE_URL}/pet/{pet_id}"

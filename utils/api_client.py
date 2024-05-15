@@ -12,9 +12,10 @@ class APIClient:
 
     def post(self, url, data=None, files=None, headers=None, **kwargs):
         print(f"Sending POST request to: {url}")
-        merged_headers = {**self.default_headers, **(headers or {})}  # Merge default and custom headers
-        if files:  # Check if multipart request
-            merged_headers['Content-Type'] = 'multipart/form-data'  # Override content type for multipart request
+        merged_headers = {**self.default_headers, **(headers or {})}
+        # Do not set Content-Type if files are present, requests will handle it
+        if files:
+            merged_headers.pop('Content-Type', None)
         return self.session.post(url, data=data, files=files, headers=merged_headers, **kwargs)
 
     def put(self, url, data=None, files=None, headers=None, **kwargs):
