@@ -1,0 +1,19 @@
+{
+   "id": 1,
+        "category": {
+            "id": 2,
+            "name": "category"
+        },
+        "name": "TestName",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 1,
+                "name": "string"
+            }
+        ],
+        "status": "available"
+    }
+}
